@@ -1,6 +1,11 @@
+AnimatedSprite2D
 Timer
+AudioStreamPlayer2D
+Button
+MarginContainer
+Label
+CanvasLayer
 TextureRect
 Node
 CollisionShape2D
-AnimatedSprite2D
 Area2D

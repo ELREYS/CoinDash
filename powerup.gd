@@ -1,9 +1,9 @@
 extends Area2D
 
 var screensize = Vector2.ZERO
-var addscore  = 10
+var addTime  = 10
 
-func pickup():
+func powerup_pickup():
 	$CollisionShape2D.set_deferred("disabled",true)
 	var tw  = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
 	tw.tween_property(self,"scale",scale * 3,0.3)

@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://dy0036k4idx0w" path="res://assets/coin/coin-frame-10.png" id="10_d4nhq"]
 [ext_resource type="Texture2D" uid="uid://57hs21c3hahc" path="res://assets/coin/coin-frame-11.png" id="11_u70sg"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_paqwn"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8l52w"]
+radius = 20.0998
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6e0o"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -51,20 +54,16 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 12.0
+"speed": 5.0
 }]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_8l52w"]
-radius = 20.0998
 
 [node name="Coin" type="Area2D" groups=["coins"]]
 script = ExtResource("1_c7maj")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource("CircleShape2D_8l52w")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.4, 0.4)
-sprite_frames = SubResource("SpriteFrames_paqwn")
-frame = 2
-frame_progress = 0.423195
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8l52w")
+sprite_frames = SubResource("SpriteFrames_m6e0o")

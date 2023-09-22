@@ -2,6 +2,7 @@ extends Area2D
 
 signal pickup
 signal hurt
+signal powerup
 
 
 @export var speed = 350
@@ -47,3 +48,6 @@ func _on_area_entered(area):
 	if area.is_in_group("obstacles"):
 		hurt.emit()
 		die()
+	if area.is_in_group("powerups"):
+		area.powerup_pickup()
+		powerup.emit()

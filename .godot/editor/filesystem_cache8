@@ -1,11 +1,21 @@
 2a60927148abd1d33b818b535e306557
-::res://::1695391566
+::res://::1695399493
 icon.svg::CompressedTexture2D::4350145334431421719::1695391432::1695391445::1::::<><>::
+player.tscn::PackedScene::7798362363176124585::1695399453::0::1::::<><>::uid://db3liyko3afj0<>res://player.gd<>uid://bmb5rqjhuvyc1<>uid://cbvnekexbmtym<>uid://bqqstsyqpmk8p<>uid://dd4oulpgb8boj<>uid://c42cyfkai4fbf<>uid://dgvxl82kpc7yd<>uid://dymqducda7ayl<>uid://d2dh1umj2rvf5<>uid://bgr04l3cqacj6<>uid://ckn6worgo5hl0<>uid://c0ky4ovkihecg
+player.gd::GDScript::-1::1695399225::0::1::::<>Area2D<>::
+coin.tscn::PackedScene::6775885814454307809::1695399479::0::1::::<><>::res://coin.gd<>uid://x2ly14kwpj6t<>uid://c81eb2lm2tg07<>uid://cujvy416otf7o<>uid://bvaeqglibih0y<>uid://i706yufsoodd<>uid://b8m3if0avmgj7<>uid://cxqextsc8jweb<>uid://doqlnfla58c6n<>uid://dly0718tmtfx6<>uid://dy0036k4idx0w<>uid://57hs21c3hahc
+coin.gd::GDScript::-1::1695398883::0::1::::<>Area2D<>::
+Background.gd::GDScript::-1::1695394373::0::1::::<>TextureRect<>::
+Main.gd::GDScript::-1::1695399283::0::1::::<>Node<>::
+main.tscn::PackedScene::8328658847643269152::1695399453::0::1::::<><>::res://Main.gd<>uid://c3sj345u14g7b<>uid://bx5lxgrrj1pd6<>uid://djdt5hocxige0<>uid://c0hk50ul4fmfr<>uid://b8jwkv38fqa0a<>uid://cq8qejeb53u8o<>uid://nqaj8lg83lob<>uid://d0u4pf78sfksh<>uid://rgxglexaaie7
+HUD.gd::GDScript::-1::1695396438::0::1::::<>CanvasLayer<>::
+hud.tscn::PackedScene::4722586703066175938::1695399453::0::1::::<><>::res://HUD.gd<>uid://qf1kp5nqrprk
+powerup.tscn::PackedScene::356926290748960151::1695399503::0::1::::<><>::res://coin.gd<>uid://x2ly14kwpj6t<>uid://c81eb2lm2tg07<>uid://cujvy416otf7o<>uid://bvaeqglibih0y<>uid://i706yufsoodd<>uid://b8m3if0avmgj7<>uid://cxqextsc8jweb<>uid://doqlnfla58c6n<>uid://dly0718tmtfx6<>uid://dy0036k4idx0w<>uid://57hs21c3hahc
 ::res://assets/::1695391566
 cactus.png::CompressedTexture2D::93569443207714425::1695391566::1695391566::1::::<><>::
 grass.png::CompressedTexture2D::4063404722357127425::1695391566::1695391566::1::::<><>::
 Kenney Bold.ttf::FontFile::1134940721536906672::1695391566::1695391566::1::::<><>::
-::res://assets/audio/::1695391566
+::res://assets/audio/::1695398177
 Coin.wav::AudioStreamWAV::5964966425514595104::1695391566::1695391566::1::::<><>::
 EndSound.wav::AudioStreamWAV::8957058590384232955::1695391566::1695391566::1::::<><>::
 Hit.wav::AudioStreamWAV::8552148334302924561::1695391566::1695391566::1::::<><>::

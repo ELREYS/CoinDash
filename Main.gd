@@ -1,6 +1,7 @@
 extends Node
 
 @export var coin_scene : PackedScene
+@export var powerup_scene : PackedScene
 @export var playtime = 30
 
 var level = 1
@@ -16,7 +17,8 @@ func _ready():
 	screensize = get_viewport().get_visible_rect().size
 	$Player.screensize = screensize
 	$Player.hide()
-	new_game()
+	$HUD.update_score(score)
+	$HUD.update_timer(time_left)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -34,11 +36,64 @@ func new_game():
 	$Player.start()
 	$Player.show()
 	$GameTimer.start()
+	$PowerUpsAppear.start()
 	spawn_coins()
 	
 func spawn_coins():
+	$LevelSound.play()
 	for i in level + 4:
 		var c = coin_scene.instantiate()
 		add_child(c)
 		c.screensize = screensize
 		c.position = Vector2(randi_range(0,screensize.x),randi_range(0,screensize.y))
+
+func spawn_powerups():
+	var c =  powerup_scene.instantiate()
+	add_child(c)
+	c.screensize = screensize
+	c.position = Vector2(randi_range(0,screensize.x),randi_range(0,screensize.y))
+	
+func _on_game_timer_timeout():
+	time_left-= 1
+	$HUD.update_timer(time_left)
+	if time_left <= 0:
+		game_over()
+
+func game_over():
+	playing = false;
+	$GameTimer.stop()
+	get_tree().call_group("coins","queue_free")
+	$HUD.show_game_over()
+	$Player.die()
+	$EndSound.play()
+	
+
+
+func _on_player_hurt():
+	game_over()
+
+
+func _on_player_pickup():
+	score += 1
+	$HUD.update_score(score)
+	$CoinSound.play()
+
+
+func _on_hud_start_game():
+	new_game()
+
+
+func _on_power_ups_appear_timeout():
+	if playing and get_tree().get_nodes_in_group("powerups").size() > 0:
+		return
+	else:
+		spawn_powerups()
+		$PowerUpsAppear.set_wait_time(randi_range(5,10))
+		$PowerUpsAppear.start()
+
+
+func _on_player_powerup():
+	time_left += 20
+	$HUD.update_timer(time_left)
+	$PowerUps.play()
+	
