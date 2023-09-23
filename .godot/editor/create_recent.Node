@@ -1,5 +1,8 @@
-AnimatedSprite2D
 Timer
+CollisionShape2D
+Sprite2D
+Area2D
+AnimatedSprite2D
 AudioStreamPlayer2D
 Button
 MarginContainer
@@ -7,5 +10,3 @@ Label
 CanvasLayer
 TextureRect
 Node
-CollisionShape2D
-Area2D
